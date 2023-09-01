@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that sends a request to the URL and displays the value of the variable
+Script that sends request to URL and displays value of variable
 
 """
 import requests
