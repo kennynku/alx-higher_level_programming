@@ -1,13 +1,20 @@
 #!/usr/bin/python3
 """sends a request to the URL and displays the body of the response 
 """
-if __name__ == "__main__":
-    import urllib.error as error
-    import urllib.request as request
-    from sys import argv
-    req = request.Request(argv[1])
+import urllib.request
+from sys import argv
+
+
+def main(argv):
+    url = argv[1]
+    req = urllib.request.Request(url)
     try:
-        with request.urlopen(req) as r:
-            print(r.read().decode('utf-8'))
-    except error.HTTPError as e:
+        with urllib.request.urlopen(req) as response:
+            result = response.read()
+            print(result.decode('utf8'))
+    except urllib.error.URLError as e:
         print("Error code: {}".format(e.code))
+
+
+if __name__ == "__main__":
+    main(argv)
