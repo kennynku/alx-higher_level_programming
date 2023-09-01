@@ -1,16 +1,14 @@
 #!/usr/bin/python3
 """
-script that sends a request to the URL and displays the value of the variable 
+Script that sends a request to the URL and displays the value of the variable 
 """
 import requests
-from sys import argv
-
-
-def main(argv):
-    url = argv[1]
-    r = requests.get(url)
-    headers = r.headers.get('X-Request-Id')
-    print(headers)
+import sys
 
 if __name__ == "__main__":
-    main(argv)
+
+    url = sys.argv[1]
+
+    r = requests.get(url)
+    print(r.headers.get("X-Request-Id"))
+
