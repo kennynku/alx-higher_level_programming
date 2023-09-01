@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Sends a POST request to URL as a parameter and displays the body of the response
+Sends a POST request to URL as parameter and displays body of response
 """
 import sys
 import requests
