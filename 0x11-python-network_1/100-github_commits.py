@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Listing the 10 commits (from the most recent to oldest) of the repository "rails" by the user "rails"
+"""Listing the 10 commits of the repository "rails" by user "rails"
 """
 if __name__ == '__main__':
     import requests
