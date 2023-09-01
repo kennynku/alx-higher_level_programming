@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""sends a request to the URL and displays the body of the response 
+"""
+takes in URL and requests URL, displays body of response
 """
 import urllib.request
 from sys import argv
-
 
 def main(argv):
     url = argv[1]
