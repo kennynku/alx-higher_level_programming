@@ -1,20 +1,17 @@
 #!/usr/bin/python3
 """
-takes in URL and requests URL, displays body of response
+takes in URL and sends request to URL, displays body of response
 """
+import sys
+import urllib.parse
 import urllib.request
-from sys import argv
-
-def main(argv):
-    url = argv[1]
-    req = urllib.request.Request(url)
-    try:
-        with urllib.request.urlopen(req) as response:
-            result = response.read()
-            print(result.decode('utf8'))
-    except urllib.error.URLError as e:
-        print("Error code: {}".format(e.code))
-
 
 if __name__ == "__main__":
-    main(argv)
+    url = sys.argv[1]
+
+    request = urllib.request.Request(url)
+    try:
+        with urllib.request.urlopen(request) as response:
+            print(response.read().decode("ascii"))
+    except urllib.error.HTTPError as e:
+        print("Error code: {}".format(e.code))
